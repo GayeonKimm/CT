@@ -50,13 +50,32 @@
 
 
 # 8958 OX퀴즈
-n = int(input())
-for i in range(n):
-    score = list(input())
-    for j in range():
-
-        if s =='O':du tn sjde dls srj d;Td, s
-
+# n = int(input())
+# for i in range(n):
+#     test = list(input())
+#     o_cnt = 1
+#     score = 0
+#     for i in test:
+#         if i =='O':
+#             score += o_cnt
+#             o_cnt += 1
+#         else :
+#             o_cnt = 1
+#     print(score)
 
 
 # 4344 평균은 넘겠지
+n = int(input())
+for _ in range(n):
+    score = list(map(int, input().split()))
+    avg = sum(score[1:])/score[0]
+    cnt = 0
+    # print(avg)
+
+    for s in score[1:]:
+        if s > avg:
+            cnt += 1
+    rate = (cnt/score[0])*100
+    print(f'{rate:.3f}%')
+
+# 이거 잘했다 담에 또 풀어보기
