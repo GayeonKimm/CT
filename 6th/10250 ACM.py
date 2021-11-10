@@ -1,4 +1,6 @@
 # 뭔소리지? 했는데 풀었음
+# 몫과 나머지로
+
 c = int(input())
 for i in range(c):
     h, w, n = map(int, input().split())
