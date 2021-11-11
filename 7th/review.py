@@ -1,4 +1,4 @@
-# 달팽이 복습
+# 달팽이
 # a, b, v = map(int,input().split())
 # if (v-b)%(a-b)==0:
 #     n = (v-b)//(a-b)
@@ -7,7 +7,7 @@
 # print(n)
 # 왜 if가 0일때인지 이유가 뭐야?
 
-# 호텔 복습
+# 호텔
 # t = int(input())
 # for i in range(t):
 #     h,w,n = map(int,input().split())
