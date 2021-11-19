@@ -12,3 +12,4 @@ for i in range(n-1):
     sum = sum *2 +1
 print(sum)
 hanoi(n,1,2,3)
+# 해결중
