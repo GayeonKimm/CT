@@ -6,14 +6,14 @@
 # print(K)
 
 # 1100 하얀 칸
-C =[]
+# 변수 설정을 다시 했음 (sum -> answer)
+A = []
 for _ in range(8):
-    C.append(list(map(str,list(input()))))
-
-sum = 0
+    A.append(list(map(str, list(input()))))
+answer = 0
 for i in range(8):
     for j in range(8):
         if (i+j)%2 == 0:
-            if C[i][j] == 'F':
-                sum +=1
-print(sum)
+            if A[i][j] == 'F':
+                answer += 1
+print(answer)
