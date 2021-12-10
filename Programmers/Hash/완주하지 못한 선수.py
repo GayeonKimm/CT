@@ -1,17 +1,26 @@
 def solution(participant, completion):
-    d = dic()
-    for p in participant:
-        d[p] +=1
-    for c in completion:
-        d[c] -=1
-        if d[c] == 0:
-            d.pop(c)
+    participant.sort()
+    completion.sort()
 
-    return
+    for p, c in zip(participant, completion):
+        if p != c:
+            return p
+
+    return participant.pop()
+
+# def solution(participant, completion):
+#     d = dict()
+#     for p in participant:
+#         d[p] = d.get(p,0) + 1
+#     for c in completion:
+#         d[c] -= 1
+#     answer = ''.join(k for k,v in d.items() if v>0)
+#     return answer
 
 
-
-
-p =["leo", "kiki", "eden"]
-c= ["eden", "kiki"]
+p = ["leo", "kiki", "eden"]
+c = ["eden", "kiki"]
 print(solution(p, c))
+
+# 1. name sorted
+# 2. check. using zip(,)
