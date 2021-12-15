@@ -1,4 +1,5 @@
-# DFS
+# 타겟 넘버
+
 
 # def solution(numbers, target):
 #     S = sum(numbers)
@@ -8,11 +9,11 @@
 #     for n in numbers:
 #         Len = len(L)
 #         for idx in range(Len):
-#             L.append(L[idx]-2*n)
+#             L.append(L[idx]-2*n)   # 왜 2*n 일까
 #         print(L)
 #     return L.count(target)
 
-# DFS
+# method 1 DFS
 def dfs(idx, ans):
     global answer, nb, tg
     if idx == len(nb):
@@ -32,7 +33,7 @@ def solution(numbers, target):
     dfs(0,0)
     return answer
 
-# 재귀함수
+# method 2
 # def solution(numbers, target):
 #     if not numbers and target == 0:
 #         return 1

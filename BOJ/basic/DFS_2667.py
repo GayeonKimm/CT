@@ -22,7 +22,7 @@ chk = [[False] * N for _ in range(N)]
 print(map)
 print(chk)
 
-result = []
+result = []  # 결과값 저장 리스트
 each = 0
 dy = [0,1,0,-1]
 dx = [1,0,-1,0]
@@ -30,23 +30,31 @@ dx = [1,0,-1,0]
 def dfs(y,x):
     global each
     each += 1
+    print("each = ", each)
+
     for k in range(4):
         ny = y + dy[k]
         nx = x + dx[k]
         if 0<=ny<N and 0<=nx<N:
             if map[ny][nx] == 1 and chk[ny][nx] == False:
                 chk[ny][nx] = True
+                # 재귀함수 호출
                 dfs(ny, nx)
 
 for j in range(N):
     for i in range(N):
         if map[j][i] == 1 and chk[j][i] == False:
+            # 방문 체크 표시
             chk[j][i] = True
+            # DFS로 크기 구하기
+            # BFS - 함수 호출, 리턴값으로 크기 설정
             each = 0
             dfs(j,i)
+            # 크기를 결과 리스트에 넣기
             result.append(each)
             print("result = ",result)
 
+# 오름차순으로 정렬
 result.sort()
 print(len(result))
 for i in result:
