@@ -1,54 +1,78 @@
 # method 1
-
+# from collections import deque, Counter
+#
 # def solution(n, edge):
-#     graph = [set() for _ in range(n + 1)]
-#     for s, e in edge:
-#         graph[s].add(e)
-#         graph[e].add(s)
+#     answer = 0
+#     graph = {}
+#     for i in edge:
+#         if i[0] in graph:
+#             graph[i[0]].append(i[1])
+#         else:
+#             graph[i[0]] = [i[1]]
 #
-#     queue = set([1])
-#     visited = set([1])
+#         if i[1] in graph:
+#             graph[i[1]].append(i[0])
+#         else:
+#             graph[i[1]] = [i[0]]
 #
-#     while len(visited) < n:
-#         next_queue = set()
+#     print("최종 graph = ", graph)
 #
-#         while queue:
-#             node = queue.pop()
-#             next_queue |= graph[node]
+#     result = bfs(graph, 1)
 #
-#         queue = next_queue - visited
-#         visited |= queue
+#     result = sorted(result.values(), reverse=True)
+#     return list(Counter(result).values())[0]
 #
-#     return len(queue)
+#
+# def bfs(edge, root):
+#     visited = {}
+#     q = deque([[root, 0]])  # 1과 1은 거리가 0
+#     arr = [[root, 0]]  #
+#     print("시작 q = ", q)
+#
+#     while q:   # 비어 있지 않으면 실행
+#         current = q.popleft()  # 가장 먼저들어온 거 FIFO 순서
+#         print("current = ",current)
+#
+#         if current[0] not in visited:
+#             visited[current[0]] = current[1]
+#             add = set(edge[current[0]]) - set(visited)
+#             q += ([[i, current[1] + 1] for i in add])
+#         print("뭐야? = ",set(edge[current[0]]))
+#         print("visited = ", visited)
+#         print("add = ", add)
+#         print("변하는 q = ", q)
+#
+#     return visited
 
 from collections import deque
 
 def solution(n, edge):
     answer = 0
-    graph = [[] * n for _ in range(n + 1)]  # 각 노트와 연결된 노드표시
-    print(graph)
-    for a, b in edge:
-        graph[a].append(b)
-        graph[b].append(a)
-    print("graph = ", graph)
 
-    visited = [0] * (n + 1)
-    visited[1] = 1
-    print("visited = ", visited)
-    queue = deque([1])
-    print("queue = ", queue)
+    nodes = [[] for _ in range(n+1)]
+    for e in edge:
+        nodes[e[0]].append(e[1])
+        nodes[e[1]].append(e[0])
 
-    while queue:
-        n = queue.popleft()
+    dist_list= []
 
-        for i in graph[n]:
-            if visited[i] == 0:
-                queue.append(i)
-                visited[i] = visited[n] + 1
-        print(visited)
+    q = deque([(1,0)])
+    visited = [False for _ in range(n+1)]
+    visited[1] = True
 
-    answer = visited.count(max(visited))
+    while q:
+        idx, dist = q.popleft()
+
+        for node in nodes[idx]:
+            if not visited[node]:
+                visited[node] = True
+                q.append((node, dist+1))
+                dist_list.append(dist+1)
+
+    answer = dist_list.count(max(dist_list))
+
     return answer
+
 
 
 
