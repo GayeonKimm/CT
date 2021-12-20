@@ -5,18 +5,18 @@ heap_list = []
 heapq.heappush(heap_list, 4)
 heapq.heappush(heap_list, 1)
 heapq.heappush(heap_list, 7)
-print(heap_list)
+print("heap_list= ", heap_list)
 
 # pop
 print(heapq.heappop(heap_list))
 
 # pop 하지 않고 최솟값 얻기
-print(heap_list[0])
+print("heap_list[0] = ", heap_list[0])
 
 # 기존 리스트를 힙으로 변환
 a_list = [4,1,7,3,8,5]
 heapq.heapify(a_list)
-print(a_list)
+print("a_list = ", a_list)
 
 # 살짝 변형해보기
 b_list = [4,1,7,2,8,5]

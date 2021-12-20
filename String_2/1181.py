@@ -14,3 +14,6 @@ word.sort(key=len)
 
 for i in word:
     print(i, end='\n')
+
+
+# key lambda 사용해서 하는 법도 있음!!
