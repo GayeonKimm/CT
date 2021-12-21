@@ -16,7 +16,7 @@ for i in A:
     for j in s:
         cnt += int(j)
     num.append(cnt)
-    print(num)
+
 result = num[0]
 for i in range(1, len(num)):
     result -= num[i]
