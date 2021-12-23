@@ -1,6 +1,5 @@
 # 타겟 넘버
 
-
 # def solution(numbers, target):
 #     S = sum(numbers)
 #     L = [S]  # [5]
