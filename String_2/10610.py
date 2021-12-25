@@ -23,7 +23,7 @@ else:
 # 문자로 받았기 때문에 sum을 문자씩 돌려가면서 더해야 하고
 # 문자로 받았기 때문에 0이 있냐고 물어볼때도 '0'이라고 표시해야됨
 # print join을 할때도 문자만 합쳐질 수 있나봄
-
+#
 
 # # k = list(map(int, input().strip()))
 # k = list(input().strip())
