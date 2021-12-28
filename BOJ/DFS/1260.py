@@ -30,6 +30,7 @@ visit2 = [0] * (n+1)
 for _ in range(m):
     a,b = map(int, input().split())
     graph[a][b] = graph[b][a] = 1
+print(graph)
 
 dfs(v)
 print() # 띄어쓰기 역할
