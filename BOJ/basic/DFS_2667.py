@@ -52,10 +52,10 @@ for j in range(N):
             dfs(j,i)
             # 크기를 결과 리스트에 넣기
             result.append(each)
-            print("result = ",result)
+            # print("result = ",result)
 
 # 오름차순으로 정렬
 result.sort()
-print(len(result))
+# print(len(result))
 for i in result:
     print(i)
