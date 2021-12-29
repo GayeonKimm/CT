@@ -30,8 +30,6 @@ def bfs(y, x):
     rs = 1
     q = deque()
     q.append((y, x))
-    print("------------")
-    print("시작 q = ",q)
 
     while q:
         ey, ex = q.popleft()
