@@ -4,24 +4,15 @@ def solution(priorities, location):
     from collections import deque
 
     q = deque([(v, i) for i, v in enumerate(priorities)])
-    print("시작 q", q)
 
     while len(q):
         item = q.popleft()
-        print("item = ", item)
-        # print("max(q) = ", max(q))
-        # print("max(q)[0] = ", max(q)[0])
-
-        # if max(q)[0] > item[0]:
         if q and max(q)[0] > item[0]:
             q.append(item)
-            print("q = ", q)
         else:
             answer += 1
-            print("answer = ", answer)
             if item[1] == location:
                 break
-        print("-------------")
 
     return answer
 

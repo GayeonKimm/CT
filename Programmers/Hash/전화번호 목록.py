@@ -1,8 +1,6 @@
 def solution(phone_book):
     answer = True
-    print("sort 전 phone_book = ",phone_book)
     phone_book.sort()
-    print("sort 후 phone_book = ",phone_book)
 
     for i in range(len(phone_book)-1):
         if len(phone_book[i]) < len(phone_book[i+1]):
