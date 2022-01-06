@@ -1,17 +1,19 @@
 def solution(answers):
-    first = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
-    second = [2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2]
-    third = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5, 3, 3, 1, 1, 2, 2, 4, 4]
+    first = [1,2,3,4,5]
+    second = [2,1,2,3,2,4,2,5]
+    third = [3,3,1,1,2,2,4,4,5,5]
     ret = [0,0,0]
 
     for i in range(len(answers)):
-        if answers[i] == first[i%5]:
+        # 여기 elif 의 방식대로 짜면 3명중 한명만 맞게됨
+        # 모두 통과하게 해줘야 모두 정답 인정 된다
+        if answers[i] == first[i%len(first)]:   # first의 반복수만큼 나눠줘야함
             ret[0] += 1
-        if answers[i] == second[i%8]:
+        if answers[i] == second[i%len(second)]:
             ret[1] += 1
-        if answers[i] == third[i%10]:
+        if answers[i] == third[i%len(third)]:
             ret[2] += 1
-    # print(ret)
+
     max_value = max(ret)
     answer = []
     for i in range(len(ret)):
