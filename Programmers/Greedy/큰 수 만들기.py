@@ -9,16 +9,6 @@
 #
 #     return "".join(sorted(answer, reverse=True)[0])
 
-
-# def solution(number, k):
-#     answer = []
-#     for i in range(len(number)):
-#         while answer and k > 0 and number[i] > answer[-1]:
-#             answer.pop()
-#             k-=1
-#         answer.append(number[i])
-#     return "".join(answer[:len(answer)-k])
-
 def solution(number,k):
     answer = []
     for num in number:
@@ -26,8 +16,11 @@ def solution(number,k):
             answer.pop()
             k-=1
         answer.append(num)
-    answer = "".join(answer[:len(number)-k])
+        # 이거 안쓰면 마지막에 오류 하나 남
+        # 길이만큼만 걍 잘라서 출력해야해서
+    answer = "".join(answer[:len(answer)-k])
     return answer
+
 
 number = "1231234"
 k = 3

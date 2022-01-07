@@ -3,12 +3,9 @@
 
 def solution(clothes):
     d = {}
-    # d = dict()
-
     for name, item in clothes:
         d[item] = d.get(item, 0) + 1
         # d.get(): item의 value넣기
-        print(d)
         # d[item], 즉 item value에 item
 
     answer = 1
