@@ -8,6 +8,7 @@ def solution(nums):
         return int(n)
         #소수점 나오길래 int 씌웠음
 
-# nums = [3,1,2,3]
-nums = [1,2,3,4,5,5]
+
+nums = [3,1,2,3]
+# nums = [1,2,3,4,5,5]
 print(solution(nums))
