@@ -19,7 +19,7 @@ def gcd(n,m):
     if mod != 0:
         m,n = n,mod
         return gcd(n,m)
-    else:
+    else:   # mod == 0이면 작은 수가 최대공약수가 되니깐
         return n
 
 def solution(n,m):
