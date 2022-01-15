@@ -1,5 +1,7 @@
 # 간단한데 꼭 알아야 하는 코드
 
+
+
 def solution(arr1, arr2):
     answer = arr1
     # answer = [[]]
