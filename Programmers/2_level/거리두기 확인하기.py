@@ -1,94 +1,61 @@
-# from collections import deque
-#
-#
-# def bfs(p):
-#     start = []
-#     for i in range(5):
-#         for j in range(5):
-#             if p[i][j] == 'P':
-#                 start.append([i, j])
-#
-#     for s in start:
-#         q = deque([s])
-#         visited = [[0] * 5 for i in range(5)]
-#         distance = [[0] * 5 for i in range(5)]
-#         visited[s[0]][s[1]] = 1
-#
-#         while q:
-#             x,y = q.popleft()
-#             dx = [-1, 1, 0, 0]
-#             dy = [0, 0, -1, 1]
-#
-#             for i in range(4):
-#                 nx = x + dx[i]
-#                 ny = y + dy[i]
-#
-#                 if 0 <= nx < 5 and 0 <= ny < 5 and visited[nx][ny]==0:
-#
-#                     if p[nx][ny] == 'O':
-#                         q.append([nx, ny])
-#                         visited[nx][ny] = 1
-#                         distance[nx][ny] = distance[x][y]+1
-#
-#                     if p[nx][ny] == 'P' and distance[x][y] <= 1:
-#                         return 0
-#     return 1
-#
-#
-# def solution(places):
-#     answer = []
-#
-#     for i in places:
-#         answer.append(bfs(i))
-#
-#     return answer
 from collections import deque
-def bfs(p):
-    start = []
-    visited = [[False] * 5 for i in range(5)]
-    distance = [[0] * 5 for i in range(5)]
 
-    for i in range(5):
-        for j in range(5):
-            if p[i][j] == 'P':
-                start.append([i, j])
-                visited[i][j] = True
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
-    for s in start:
-        q = deque()
-        q.append(s)
+def bfs(place, i, j):
+    visit = [[0] * 5 for i in range(5)]
+    q = deque()
+    q.append((i,j,0))
+    visit[i][j] = 1
 
-        while q:
-            x,y = q.popleft()
-            dx = [-1,1,0,0]
-            dy = [0,0,-1,1]
+    while q:
+        x, y, dist = q.popleft()
 
-            for i in range(4):
-                nx = x + dx[i]
-                ny = y + dy[i]
+        if 0 < dist < 3 and place[x][y] == 'P':
+            return False
+        # 거리가 2이이고 P이면 False리턴
 
-                if 0 <= nx < 5 and 0 <= ny < 5 and visited[nx][ny]==0:
+        if dist > 2:
+            break
 
-                    if p[nx][ny] == 'O':
-                        q.append([nx, ny])
-                        visited[nx][ny] = 1
-                        distance[nx][ny] = distance[x][y]+1
+        for a in range(4):
+            nx = x + dx[a]
+            ny = y + dy[a]
+            nd = dist + 1
 
-                    if p[nx][ny] == 'P' and distance[x][y] <= 1:
-                        return 0
-    return 1
+            if 0 <= nx < 5 and 0 <= ny < 5:
+                if place[nx][ny] != 'X' and not visit[nx][ny]:
+                    visit[nx][ny] = 1
+                    q.append((nx,ny,nd))
+    return True
 
 
 def solution(places):
     answer = []
 
-    for i in places:
-        answer.append(bfs(i))
+    for place in places:
+        chk = 0
+
+        for i in range(5):           # len(place)
+            for j in range(5):      # len(place[0])
+                if place[i][j] == 'P':
+                    if not bfs(place, i, j):       # False면
+                        answer.append(0)
+                        chk = 1
+                        break
+                        # 하나라도 거리두기 지켜지지 않으면 확인할 필요 없음
+
+            if chk:    #chk가 1이면
+                break
+        else:
+            answer.append(1)
 
     return answer
 
-print(solution([["POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"],
-                ["POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"],
-                ["PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"],
-                ["OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"],
-                ["PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"]]))
+places = [["POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"],
+        ["POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"],
+        ["PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"],
+        ["OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"],
+        ["PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"]]
+print(solution(places))
