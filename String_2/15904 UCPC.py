@@ -16,7 +16,11 @@ input = sys.stdin.readline
 
 s = input().strip()
 data = ['U','C','P','C']
-chk = False # 먼저 선언해도 되고, 안해도 되고
+
+# print(type(s))
+# print(type(data))
+chk = False
+# 먼저 선언해도 되고, 안해도 되고
 
 for i in range(4):
     if data[i] in s:

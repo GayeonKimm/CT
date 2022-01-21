@@ -1,5 +1,3 @@
-# 첫글자 아니여도 그냥 문자열 내부에서 같은 문자가 몇개 있는지만 반환하면 됨
-
 import sys
 input = sys.stdin.readline
 
