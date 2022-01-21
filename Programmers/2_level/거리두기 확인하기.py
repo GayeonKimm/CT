@@ -5,16 +5,16 @@ dy = [0, 0, -1, 1]
 
 def bfs(place, i, j):
     visit = [[0] * 5 for i in range(5)]
+    visit[i][j] = True
+
     q = deque()
     q.append((i,j,0))
-    visit[i][j] = 1
 
     while q:
         x, y, dist = q.popleft()
 
         if 0 < dist < 3 and place[x][y] == 'P':
             return False
-        # 거리가 2이이고 P이면 False리턴
 
         if dist > 2:
             break
@@ -25,7 +25,7 @@ def bfs(place, i, j):
             nd = dist + 1
 
             if 0 <= nx < 5 and 0 <= ny < 5:
-                if place[nx][ny] != 'X' and not visit[nx][ny]:
+                if place[nx][ny] != 'X' and visit[nx][ny]==False:
                     visit[nx][ny] = 1
                     q.append((nx,ny,nd))
     return True
@@ -35,14 +35,14 @@ def solution(places):
     answer = []
 
     for place in places:
-        chk = 0
+        chk = False
 
         for i in range(5):           # len(place)
             for j in range(5):      # len(place[0])
                 if place[i][j] == 'P':
                     if not bfs(place, i, j):       # False면
                         answer.append(0)
-                        chk = 1
+                        chk = True
                         break
                         # 하나라도 거리두기 지켜지지 않으면 확인할 필요 없음
 
