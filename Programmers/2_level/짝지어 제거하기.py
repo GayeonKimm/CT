@@ -1,7 +1,7 @@
 def solution(s):
     stack = []
     for i in range(len(s)):
-        if not stack: # 일단 암것도 없으면 채워야지. 없는데 stack[-1]안되니까
+        if not stack:
             stack.append(s[i])
         else:
             if stack[-1]==s[i]:
