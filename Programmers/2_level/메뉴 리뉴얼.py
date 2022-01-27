@@ -8,17 +8,19 @@ def solution(orders, course):
         temp = []
 
         for order in orders:
-            combi = combinations(sorted(order), c)
-            temp += combi
+            temp += combinations(sorted(order), c)
+            # temp += combi
         counter = Counter(temp)
         print("counter = ", counter)
 
         if len(counter) != 0 and max(counter.values()) != 1:
             answer += [''.join(f) for f in counter if counter[f] == max(counter.values())]
-        print("answer = ", answer)
 
     return sorted(answer)
 
+
+# counter['AB'] 하면 그 counter값 출력됨 즉 숫자가 나온다는 거야
+# 그 숫자가 카운터들 중에서 최대값이랑 같으면 그 값을 내가 answer에 추가하겠다는 말임요
 
 orders = ["ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"]
 course = [2,3,5]
