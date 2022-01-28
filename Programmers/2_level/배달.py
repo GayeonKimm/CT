@@ -21,7 +21,6 @@ def solution(N, road, K):
     for r in road:
         adj[r[0]].append([r[2], r[1]])
         adj[r[1]].append([r[2], r[0]])
-    print(adj)
 
     dijkstra(dis, adj)
     print(dis)

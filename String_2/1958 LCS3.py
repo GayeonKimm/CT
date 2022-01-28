@@ -18,4 +18,5 @@ for i in range(1, len(s1)+1):
 #     for row in matrix:
 #         m = max(m, max(row))
 # print(m)
+print(dp)
 print(dp[-1][-1][-1])

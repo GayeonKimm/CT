@@ -14,3 +14,5 @@ for i in range(1, len(s1)+1):
             answer = max(dp[i][j], answer)
 
 print(answer)
+# ABRACADABRA
+# ECADADABRBCRDARA

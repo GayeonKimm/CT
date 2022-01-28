@@ -3,9 +3,9 @@ input = sys.stdin.readline
 
 s1 = input().strip()
 s2 = input().strip()
-
-dp =[[0]*(len(s2)+1) for _ in range(len(s1)+1)]
 answer = 0
+
+dp = [[0]*(len(s2)+1) for _ in range(len(s1)+1)]
 
 for i in range(1, len(s1)+1):
     for j in range(1, len(s2)+1):
@@ -22,3 +22,5 @@ print(dp[-1][-1])
 # [0, 1, 2, 2, 2, 3, 3],
 # [0, 1, 2, 2, 2, 3, 4],
 # [0, 1, 2, 3, 3, 3, 4]]
+# ACAYKP
+# CAPCAK
