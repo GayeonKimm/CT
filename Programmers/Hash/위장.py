@@ -14,7 +14,6 @@ def solution(clothes):
 
     return answer - 1
 
-
 clothes = [["yellowhat", "headgear"],
            ["bluesunglasses", "eyewear"],
            ["green_turban", "headgear"]]
