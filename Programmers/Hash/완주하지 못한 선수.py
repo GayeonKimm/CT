@@ -7,15 +7,7 @@ def solution(participant, completion):
             return p
 
     return participant.pop()
-
-# def solution(participant, completion):
-#     d = dict()
-#     for p in participant:
-#         d[p] = d.get(p,0) + 1
-#     for c in completion:
-#         d[c] -= 1
-#     answer = ''.join(k for k,v in d.items() if v>0)
-#     return answer
+    # return participant[-1] #도 가능
 
 
 p = ["leo", "kiki", "eden"]
