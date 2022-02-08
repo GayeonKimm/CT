@@ -8,11 +8,10 @@ def solution(s):
         cnt = 1
         tmp = s[:i]
         for j in range(i, len(s), i):
-            print("i , j = ",i,j)
             if tmp == s[j:j+i]:
                 cnt += 1
             else:
-                if cnt != 1:  # 같으면
+                if cnt != 1:
                     b = b+str(cnt)+tmp
                 else:
                     b = b+tmp
@@ -24,8 +23,7 @@ def solution(s):
         else:
             b = b+tmp
         answer.append(len(b))
-    print(answer)
-    return min(answer)
+    return answer
 
 
 
