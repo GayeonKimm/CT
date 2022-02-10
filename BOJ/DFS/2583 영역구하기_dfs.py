@@ -9,4 +9,6 @@ for _ in range(k):
         for j in range(sx, ex):
             maps[i][j] = 1
 
+visit = [[False]*n for _ in range(m)]
+answer = []
 
