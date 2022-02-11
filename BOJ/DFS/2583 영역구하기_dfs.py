@@ -10,5 +10,5 @@ for _ in range(k):
             maps[i][j] = 1
 
 visit = [[False]*n for _ in range(m)]
-answer = []
 
+answer = []
