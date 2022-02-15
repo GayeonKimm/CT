@@ -14,6 +14,7 @@ for _ in range(N-1):
     a,b = map(int, input().split())
     maps[a].append(b)
     maps[b].append(a)
-print(maps)
+
 dfs(1)
-print(answer)
+for i in answer[2:]:
+    print(i)
