@@ -2,7 +2,14 @@
 # 마지막 한자리수는 뭐가 나오든 상관없음
 
 def solution(n):
-    temp = []
+    if len(str(n)) == 1:
+        return n
+    else:
+        t = 0
+        for i in str(n):
+            t += int(i)
+        solution(t)
+
     return
 
 
