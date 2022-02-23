@@ -1,3 +1,6 @@
+# +6
+# 힙좀 외우자라
+
 import heapq
 def solution(scoville,K):
     answer = 0
@@ -16,8 +19,3 @@ def solution(scoville,K):
 scoville = [1,2,3,9,10,12]
 K = 7
 print(solution(scoville, K))
-# push 때는 알아서 sort 되는듯
-
-# 1. About heapq!!
-# 2. sort()
-# 3. heapq.heappop() / heapq.heappush(scovile, food1 ~ )
