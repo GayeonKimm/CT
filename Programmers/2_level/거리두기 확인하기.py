@@ -1,14 +1,13 @@
 from collections import deque
-
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
-
 def bfs(place, i, j):
-    visit = [[0] * 5 for i in range(5)]
+    visit = [[False] * 5 for i in range(5)]
     visit[i][j] = True
 
     q = deque()
     q.append((i,j,0))
+
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
 
     while q:
         x, y, dist = q.popleft()
@@ -25,9 +24,9 @@ def bfs(place, i, j):
             nd = dist + 1
 
             if 0 <= nx < 5 and 0 <= ny < 5:
-                if place[nx][ny] != 'X' and visit[nx][ny]==False:
-                    visit[nx][ny] = 1
-                    q.append((nx,ny,nd))
+                if place[nx][ny] != 'X' and visit[nx][ny] == False:
+                    visit[nx][ny] = True
+                    q.append((nx, ny, nd))
     return True
 
 

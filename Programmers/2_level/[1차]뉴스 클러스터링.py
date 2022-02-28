@@ -7,10 +7,8 @@ from collections import Counter
 def solution(str1, str2):
     s1 = str1.lower()
     s2 = str2.lower()
-    s11=[]
-    s22=[]
+    s11, s22 = [], []
 
-    # 마지막 문자는 확인 안하니까 -1
     for i in range(len(s1)-1):
         if s1[i].isalpha() and s1[i+1].isalpha():
             s11.append(s1[i:i+2])
@@ -25,13 +23,8 @@ def solution(str1, str2):
     # 부호 조심 &:교, |:합
     inter = list((c1&c2).elements())
     union = list((c1|c2).elements())
-    print("(c1&c2) = ", (c1&c2))
-    print("(c1|c2) = ", (c1|c2))
 
-    print("inter = ", inter)
-    print("union = ", union)
-
-    if len(inter)==0 and len(union)==0:
+    if len(union) == 0:
         return 65536
     else:
         return int(len(inter)/len(union) * 65536)
