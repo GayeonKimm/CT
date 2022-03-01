@@ -1,0 +1,22 @@
+# 중복 조합
+from itertools import combinations_with_replacement
+from collections import Counter
+
+def solution(n, info):
+    max_score = 0
+    answer = []
+    for i in combinations_with_replacement(range(11), n):
+        a_score, l_score = 0, 0
+        cnt = Counter(i)
+        for i in range(11):
+            if info[10-i] == 0 and cnt[i]==0:
+                continue
+            if info[10-i] >= cnt[i]:
+                a_score += i
+            else:
+                l_score += i
+
+        if max_score <(l_score - a_score):
+            max_score = (l_score - a_score)
+            answer = cnt
+        elif max_score == (l_score - a_score) and
