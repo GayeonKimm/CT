@@ -1,29 +1,33 @@
+# 재풀이. +7
+
 from collections import deque
 def solution(maps):
-    r = len(maps)
-    c = len(maps[0])
-
-    table = [[-1 for _ in range(c)] for _ in range(r)]
     q = deque()
     q.append((0, 0))
 
-    table[0][0] = 1
+    # 5*5 고정이 아니라서 해야되겟더라고
+    n = len(maps)
+    m = len(maps[0])
 
-    dx = [-1, 1, 0, 0]
-    dy = [0, 0, -1, 1]
+    graph = [[-1] * m for _ in range(n)]
+    chk = [[False] * m for _ in range(n)]
+    graph[0][0] = 1
+    chk[0][0] = True
+
+    dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
     while q:
         x, y = q.popleft()
-        for a in range(4):
-            nx = x + dx[a]
-            ny = y + dy[a]
-            if 0 <= nx < r and 0 <= ny < c:
-                if maps[nx][ny]:
-                    if table[nx][ny] == -1:
-                        table[nx][ny] = table[x][y] + 1
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if 0 <= nx < n and 0 <= ny < m:
+                if maps[nx][ny] and chk[nx][ny] == False:
+                    if graph[nx][ny] == -1:
+                        chk[nx][ny] = True
+                        graph[nx][ny] = graph[x][y] + 1
                         q.append((nx, ny))
 
-    answer = table[-1][-1]
-    return answer
+    return graph[-1][-1]
 
 print(solution([[1,0,1,1,1],
                 [1,0,1,0,1],
