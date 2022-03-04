@@ -1,23 +1,28 @@
-from itertools import combinations
-from collections import Counter
+# 재풀이 +3
+"""
+1. order들을 course에 맞게 combinations
+2. counter를 사용해 갯수 셈
+3. 조건
+- 최소 2명이상에게서 발생할 것
+- 최다 주문 메뉴만 추가할 것
+- 마지막엔 sort 오름차순
 
+"""
+
+from collections import Counter
+from itertools import combinations
 def solution(orders, course):
     answer = []
-
-    for c in course:
+    for i in course:
         temp = []
+        for j in orders:
+            temp += list(combinations(sorted(j), i))
+        c = Counter(temp)
 
-        for order in orders:
-            temp += combinations(sorted(order), c)
-            # temp += combi
-        counter = Counter(temp)
-        print("counter = ", counter)
+        if len(c) != 1 and max(c.values()) != 1:
+            answer += [''.join(i) for i in c if c[i] == max(c.values())]
 
-        if len(counter) != 0 and max(counter.values()) != 1:
-            answer += [''.join(f) for f in counter if counter[f] == max(counter.values())]
-
-    return sorted(answer)
-
+    return answer
 
 # counter['AB'] 하면 그 counter값 출력됨 즉 숫자가 나온다는 거야
 # 그 숫자가 카운터들 중에서 최대값이랑 같으면 그 값을 내가 answer에 추가하겠다는 말임요
