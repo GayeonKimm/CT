@@ -22,10 +22,7 @@ def solution(orders, course):
         if len(c) != 1 and max(c.values()) != 1:
             answer += [''.join(i) for i in c if c[i] == max(c.values())]
 
-    return answer
-
-# counter['AB'] 하면 그 counter값 출력됨 즉 숫자가 나온다는 거야
-# 그 숫자가 카운터들 중에서 최대값이랑 같으면 그 값을 내가 answer에 추가하겠다는 말임요
+    return sorted(answer)
 
 orders = ["ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"]
 course = [2,3,5]
