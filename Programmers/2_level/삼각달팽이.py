@@ -8,7 +8,6 @@ def solution(n):
             # 내려가기
             if i % 3 == 0:
                 x += 1
-
             # 오른쪽으로
             elif i % 3 == 1:
                 y += 1
