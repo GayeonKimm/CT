@@ -11,12 +11,10 @@ def solution(n):
             # 오른쪽으로
             elif i % 3 == 1:
                 y += 1
-
             # 대각선 위로
             elif i % 3 == 2:
                 x -= 1
                 y -= 1
-
             maps[x][y] = num
             num += 1
     answer = []
