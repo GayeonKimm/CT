@@ -2,7 +2,6 @@ def solution(n):
     maps = [[0]*n for _ in range(n)]
     num = 1
     x, y = -1, 0
-
     for i in range(n):
         for _ in range(i, n):
             # 내려가기
