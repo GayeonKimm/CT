@@ -6,7 +6,6 @@
 - 최소 2명이상에게서 발생할 것
 - 최다 주문 메뉴만 추가할 것
 - 마지막엔 sort 오름차순
-
 """
 
 from collections import Counter
