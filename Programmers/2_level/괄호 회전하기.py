@@ -24,7 +24,6 @@ def solution(s):
     answer = 0
     for i in range(len(s)):
         temp = temp[1:] + temp[0]
-        print(temp)
         if check(temp):
             answer += 1
     return answer
