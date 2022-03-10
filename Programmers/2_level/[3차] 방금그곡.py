@@ -3,7 +3,7 @@
 1. 주어진 시간으로 자르기
 - 잘라서 duration으로 저장
 -- 자를때 time 조정
---> 분단위로 바꿔서 eduration = end - start
+--> 분단위로 바꿔서 duration = end - start
 -- 기간만큼 코드 구간 반복
 
 2. code와 m값 비교. 정확히 m이 존재해야만
