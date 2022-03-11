@@ -25,19 +25,16 @@ def solution(m,n,board):
         # 블럭 채우기
         for i in range(m-1, -1, -1):
             for j in range(n):
-                # 리무브 값이 1이면 한칸 내려와야 하니까 x = i-1
                 if remove[i][j] == 1:
                     x = i-1
-                    # 끝까지 내려가게
                     while x >= 0 and remove[x][j] == 1:
                         x -= 1
-                    # 다 내려왔으면 없으면 0 처리
                     if x < 0:
                         board[i][j] = 0
-                    # 위치변경
                     else:
                         board[i][j] = board[x][j]
-                        remove[x][j] = 1 # 여기 1 왜 하지?
+                        remove[x][j] = 1
+            print(remove)
 
     return answer
 
