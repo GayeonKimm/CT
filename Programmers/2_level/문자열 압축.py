@@ -1,8 +1,7 @@
 def solution(s):
     answer = []
-    if len(s)==1:
+    if len(s) == 1:
         return 1
-
     for i in range(1, int(len(s)/2)+1):
         b = ''
         cnt = 1
@@ -24,8 +23,6 @@ def solution(s):
             b = b+tmp
         answer.append(len(b))
     return answer
-
-
 
 # print(solution("aabbaccc"))
 print(solution("ababcdcdababcdcd"))

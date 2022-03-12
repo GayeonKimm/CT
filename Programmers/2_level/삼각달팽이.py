@@ -16,6 +16,7 @@ def solution(n):
                 y -= 1
             maps[x][y] = num
             num += 1
+
     answer = []
     for i in maps:
         answer += [j for j in i if j != 0]
