@@ -1,12 +1,11 @@
 # 다익스트라 알고리즘
-
 import heapq
 def dijkstra(dis, adj):
     heap = []
     heapq.heappush(heap, [0,1])
     while heap:
         cost, node = heapq.heappop(heap)
-        for c,n in adj[node]:
+        for c, n in adj[node]:
             if cost + c < dis[n]:
                 dis[n] = cost + c
                 heapq.heappush(heap, [cost+c, n])

@@ -11,7 +11,6 @@ def solution(n, words):
                 a = len(stack) % n + 1
                 b = len(stack) // n + 1
                 break
-
     return [a,b]
 
 # method2
