@@ -42,7 +42,7 @@ def solution(n, info):
                     elif answer[i] > cnt[i]:
                         break
 
-    if answer == []:
+    if not answer:
         return [-1]
     else:
         temp = answer
