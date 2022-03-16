@@ -1,7 +1,6 @@
 # 중복 조합
 from itertools import combinations_with_replacement
 from collections import Counter
-
 def solution(n, info):
     max_score = 0
     answer = []
