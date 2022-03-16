@@ -1,13 +1,15 @@
 # 중복 조합
 from itertools import combinations_with_replacement
 from collections import Counter
+
 def solution(n, info):
+
     max_score = 0
     answer = []
     for i in combinations_with_replacement(range(11), n):
         a_score, l_score = 0, 0
         cnt = Counter(i)
-        # 카운터 인덱스 접근 가능함
+        # 카운터 인덱스 접근 가능함......
 
         # info 정보랑 비교하는 과정
         for i in range(11):
