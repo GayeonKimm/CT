@@ -11,9 +11,8 @@
 -1 duration이 제일 긴 음악 먼저
 -2 먼저 입력된 음악 먼저 --> 걍 먼저 들어온거  뜻이 뭐지...? 시간 시간이 더 작으면 넣는건가
 
-3. answer 값 갱신해가며 최종 title 출력
+3. answer 값 갱신해가며 최종 title 출력한다.
 """
-
 import math
 def solution(m, musicinfos):
     answer = None
