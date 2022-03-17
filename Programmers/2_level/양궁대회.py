@@ -53,5 +53,7 @@ def solution(n, info):
             answer[10-i] = temp[i]
     return answer
 
+
+
 n, info = 5, [2,1,1,1,0,0,0,0,0,0,0]
 print(solution(n, info))
