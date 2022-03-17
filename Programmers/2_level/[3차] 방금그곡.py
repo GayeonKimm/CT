@@ -13,6 +13,7 @@
 
 3. answer 값 갱신해가며 최종 title 출력한다.
 """
+
 import math
 def solution(m, musicinfos):
     answer = None
@@ -34,6 +35,7 @@ def solution(m, musicinfos):
         # code 마이너 정리
         code = code.replace("C#", 'c').replace("D#", 'd').replace("F#", 'f').replace("G#", 'g').replace("A#", 'a')
         # 기간만큼 반복한 코드 만들기
+        # 숫자
         code *= math.ceil(duration/len(code))
         code = code[:duration]
 
