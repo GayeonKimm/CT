@@ -35,7 +35,7 @@ def solution(m, musicinfos):
         # code 마이너 정리
         code = code.replace("C#", 'c').replace("D#", 'd').replace("F#", 'f').replace("G#", 'g').replace("A#", 'a')
         # 기간만큼 반복한 코드 만들기
-        # 숫자 추가
+        # 숫자 추가dy
         code *= math.ceil(duration/len(code))
         code = code[:duration]
 
