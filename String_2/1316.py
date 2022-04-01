@@ -4,16 +4,21 @@
 import sys
 input = sys.stdin.readline
 
-N = int(input())
+t = int(input())
+answer = t
+for _ in range(t):
+    s = input().strip()
 
-for _ in range(N):
-    word = input()
+    # for i in range(len(s)-1):
+    #     if s[i] != s[i+1]:
+    #         if s[i] in s[i+1:]:
+    #             answer -= 1
+    #             break
 
-    # 마지막은 확인 안해도 됨 len-1
-    for i in range(len(word)-1):
-        if word[i] == word[i+1]:
+    for i in range(len(s)-1):
+        if s[i] == s[i+1]:
             pass
-        elif word[i] in word[i+1:]:
-            N -= 1
+        elif s[i] in s[i+1:]:
+            answer -= 1
             break
-print(N)
+print(answer)

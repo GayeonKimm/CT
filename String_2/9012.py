@@ -1,22 +1,26 @@
+'''
+올바른 괄호이면 YES
+그렇지 않으면 NO 출력
+'''
 import sys
 input = sys.stdin.readline
-T = int(input())
 
-for i in range(T):
+t = int(input())
+for _ in range(t):
+    s = input()
     stack = []
-    a = input()
-    for j in a:
-        if j == '(':
-            stack.append(j)
-        elif j == ')':
-            if stack:
-                stack.pop()
-            else: # 스택에 괄호가 없을경우 NO
-                print("NO")
+    for i in s:
+        if i == '(':
+            stack.append(i)
+        elif i == ')':
+            if not stack:
+                print('NO')
                 break
-    # break문으로 끊기지 않고 수행 됐을경우 수행
-    else:
-        if not stack:  # break문으로 안끊기고 스택이 비어있다면 YES
-            print("YES")
-        else:           # break안 걸렸더라도 스택에 괄호가 들어있다면 NO
+            elif stack[-1] == '(':
+                stack.pop()
+    else: # break로 넘어가지 않았을때!!
+        print('**')
+        if not stack:
+            print('YES')
+        else:
             print("NO")
