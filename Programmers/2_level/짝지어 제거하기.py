@@ -1,4 +1,9 @@
 # + 6
+'''
+글자 확인해서 stack에 담아두기
+일단 넣어두고
+이 문자가 스택에 방금 넣은 것과 같으면 이 문자도 지우고
+'''
 def solution(s):
     stack = []
     for i in range(len(s)):
