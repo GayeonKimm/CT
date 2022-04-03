@@ -12,12 +12,14 @@ for _ in range(t):
     for i in s:
         if i == '(':
             stack.append(i)
-        elif i == ')':
+        else:
             if not stack:
                 print('NO')
                 break
             elif stack[-1] == '(':
+            # else:
                 stack.pop()
+
     else: # break로 넘어가지 않았을때!!
         print('**')
         if not stack:

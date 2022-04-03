@@ -21,7 +21,6 @@ def solution(relation):
     for i in combi:
         tmp = [tuple([item[key] for key in i]) for item in relation]
 
-
         if len(set(tmp)) == row:  # 유일성
             put = True
 
