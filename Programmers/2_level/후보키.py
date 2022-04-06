@@ -4,7 +4,6 @@
 3. 최소성 확인하기
 '''
 from itertools import combinations
-
 def solution(relation):
     row = len(relation)
     col = len(relation[0])

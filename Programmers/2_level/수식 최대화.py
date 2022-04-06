@@ -9,19 +9,23 @@ def operations(num1, num2, s):
         return str(int(num1) - int(num2))
     if s == '*':
         return str(int(num1) * int(num2))
+
 def calculate(exp, sign):
     # 주어진 식의 수식과 숫자를 문자로 array에 저장
     array = []
     temp = ''
     for i in exp:
+        # 숫자면 temp에 한번에 저장하려구
         if i.isdigit():
             temp += i
         else:
             array.append(temp)
             array.append(i)
             temp = ''
-    array.append(temp) # 혹시라도 숫자 마지막에 남아 있는게 있다면
+    array.append(temp)
+    # 혹시나 남아있을 숫자도 array에 저장
 
+    # 계산
     # 계산을 위해 sign 우선순위에 들어간다면 operation 수행,
     # 그렇지 않다면 stack에 차곡 차곡 쌓아두기
     for i in sign:
