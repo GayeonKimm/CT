@@ -18,7 +18,7 @@ def solution(n, lost, reserve):
             realres.remove(i-1)
         elif i+1 in realres:
             realres.remove(i+1)
-        else:
+        else: # 빌려줄 수 없는 경우
             answer += 1
     return n-answer
 
