@@ -1,4 +1,4 @@
-def solution(sizes):
+def solutions(sizes):
     row = 0
     col = 0
     for a, b in sizes:

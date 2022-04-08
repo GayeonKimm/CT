@@ -13,5 +13,6 @@ for _ in range(n):
     n, d, m, y = input().split()
     info.append([n, int(d), int(m), int(y)])
 info.sort(key = lambda x: (x[3], x[2],x[1]))
+
 print(info[-1][0])
 print(info[0][0])
