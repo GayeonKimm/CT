@@ -3,7 +3,6 @@
 # 숫자 다음엔 무조건 S,D,T가 나온대서 그 부분에 초기화 하는 코드 넣었음
 
 def solution(dartResult):
-    answer = 0
     stack = []
     temp = ''
     for i in dartResult:

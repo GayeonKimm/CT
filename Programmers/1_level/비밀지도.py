@@ -31,10 +31,12 @@
 def solution(n, arr1, arr2):
     answer = []
     temp = []
-    temp_str =''
+    temp_str = ''
     for i in range(n):
         temp.append(str(bin(arr1[i] | arr2[i]))[2:].rjust(n, '0'))
-        print("temp = ", temp)
+        # n 글자수로 만들건데 비어있으면 앞에 0으로 채워
+
+        # 비교
         for j in range(n):
             if temp[i][j] == '1':
                 temp_str += '#'
@@ -42,7 +44,6 @@ def solution(n, arr1, arr2):
                 temp_str += ' '
         answer.append(temp_str)
         temp_str = ''
-        print("answer = ", answer)
 
     return answer
 
