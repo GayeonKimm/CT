@@ -12,6 +12,7 @@ def gcd(n,m):
         else:
             a, b = b, mod
 b = gcd(n,m)
+
 print('%d:%d' %(n//b, m//b))
 
 # def gcd(a, b):
