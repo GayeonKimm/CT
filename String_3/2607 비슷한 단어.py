@@ -1,10 +1,8 @@
 '''
 Counter를 통해 문자의 갯수를 세어둠
 그리고 keys로 접근해서 그 값을 더하고 뺐을때 조건을 만족하면 answer 증가
-
 더하는건 ㅇㅋ인데 빼서 0이 되어버리면 어카냐
 '''
-
 # import sys
 # input = sys.stdin.readline
 # from collections import Counter
