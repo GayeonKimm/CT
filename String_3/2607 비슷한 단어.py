@@ -45,3 +45,5 @@ for _ in range(n-1):
     if count < 2:
         answer += 1
 print(answer)
+
+
