@@ -39,10 +39,7 @@ for _ in range(n-1):
         else:
             count += 1
 
-    if len(word_list) > 1:
-        continue
-
-    if count < 2:
+    if count <= 1 and len(word_list) <= 1:
         answer += 1
 print(answer)
 
