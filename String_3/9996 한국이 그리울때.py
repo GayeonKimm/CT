@@ -22,7 +22,6 @@ for _ in range(n):
     else:
         print("NE")
 
-
 # 틀린답 - 쉽게 생각한 정답
 # a, b = input().split('*')
 # for _ in range(n):
