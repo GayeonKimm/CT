@@ -24,7 +24,7 @@ while True:
                 stack.pop()
             else:
                 stack.append(')')
-                break
+
     if len(stack) == 0:
         print('yes')
     else:
