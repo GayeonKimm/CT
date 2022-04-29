@@ -1,25 +1,19 @@
-# AC
-# list1 = list(input().rstrip()[1:-1].split(','))
-# print(list1)
-# print(list1[2])
-# sick = list(input().strip())
-# print(sick)
-
-# numbers = list(input().rstrip()[1:-1].split(','))
-# q = deque(numbers)
-# print(q)
+'''
+틀린 정답임
+수정 필
+'''
 
 from collections import deque
 import sys
 input = sys.stdin.readline
 
-T = int(input())
-while T > 0:
-    T -= 1
+t = int(input())
+while t > 0:
+    t -= 1
     func = list(input().strip())
     n = int(input())
-    numbers = list(input().rstrip()[1:-1].split(','))
-    q = deque(numbers)
+    num = list(input().rstrip()[1:-1].split(','))
+    q = deque(num)
 
     check = 0
     if n == 0:

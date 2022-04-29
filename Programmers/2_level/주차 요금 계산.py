@@ -1,7 +1,6 @@
 '''
 1. records 분리
 -> split
-
 2. 시간 분리
 - 분으로 계산하는 함수 선언 datetoM -> spilt으로
 
@@ -14,9 +13,7 @@
 
 5. 주차요금 계산
 - 올림까지 계산하네.... math ceil 사용 (내림은 floor)
-'''
-
-'''
+/
 +1점을 받았는데 아마 변수명 복수로 설정을 했거나,
 아니면 fees 변수를 따로 선언해두거나! 
 수정 완. 
@@ -35,7 +32,7 @@ def solution(fees, records):
         time, id, state = record.split()
 
         id = int(id)
-        if id in d:
+        if id in d:         # 없는거일 때는 if **not** id in d:
             d[id].append([datetoM(time), state])
         else:
             d[id] = [[datetoM(time), state]]
