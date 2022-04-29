@@ -56,7 +56,7 @@ def solution(fees, records):
         if t[1][-1][-1] == 'IN': # 마지막이 in이면
             total += datetoM('23:59')
 
-        if total > fees[0]:
+        if total > dt:
             answer.append(df + math.ceil((total - dt) / um) * uf) # 올림
         else:
             answer.append(df)
