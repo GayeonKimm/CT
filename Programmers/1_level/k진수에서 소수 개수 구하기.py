@@ -15,7 +15,8 @@ def solution(n, k):
     while n:
         temp = str(n%k) + temp
         n = n // k
-    # 0을 기준으로 분리 - 얼탱이가 없네
+
+    # 0을 기준으로 분리 - 얼탱이가 없는 코드
     # ck = ''
     # check = []
     # for i in temp:
@@ -26,9 +27,10 @@ def solution(n, k):
     #         ck = ''
     #         check.append(int(i))
     word = temp.split('0')
+
     for i in word:
         if len(i) == 0 or int(i) < 2:
-            continue
+            continue  # pass 쓰면 안됨요
 
         chk = True
         # i = int(i) # 해도 됨
