@@ -3,10 +3,8 @@
 2. 최대공약수
 3. 리스트 양쪽 비교
 4. sort key 로 이것저것
---
 5.  bfs, dfs 코드 외워두기 다시
 6. pop, popleft 기강 잡기 <--- deque 사용법
----
 7. 간단했던 코드들, split('0') or count('0') or index('0')
 이런 것도 다시 한 번씩 볼 것
 '''
@@ -21,7 +19,7 @@ for i in r:
 
     chk = True
     for j in range(2, int(i**0.5)+1):
-        if i%j == 0:
+        if i % j == 0:
             chk = False
             break
     if chk: # 소수면

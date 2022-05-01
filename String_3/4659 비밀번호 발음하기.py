@@ -38,6 +38,6 @@ while True:
             chk2 = False
 
     if chk1 == True and chk2 == True:
-        print('<%s> is acceptable.' % word)
+        print('<%s> is acceptable.' %word)
     else:
-        print('<%s> is not acceptable.' % word)
+        print('<%s> is not acceptable.' %word)
