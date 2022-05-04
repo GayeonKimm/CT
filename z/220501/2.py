@@ -1,7 +1,7 @@
 def solution(vs, p):
     answer = []
     for i in vs:
-        winner,loser = i.split(':')
+        winner, loser = i.split(':')
 
     return
 
