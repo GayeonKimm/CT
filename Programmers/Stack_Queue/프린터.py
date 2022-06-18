@@ -12,7 +12,7 @@ def solution(priorities, location):
 
     while q:
         temp = q.popleft()
-        if temp[0] < max(q)[0]:
+        if temp[0] < max(q)[0]:  # 이거 틀릴걸??
             q.append(temp)
         else:
             answer += 1

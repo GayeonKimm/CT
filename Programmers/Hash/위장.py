@@ -7,6 +7,7 @@ def solution(clothes):
         d[item] = d.get(item, 0) + 1
         # d.get(): item의 value넣기
         # d[item], 즉 item value에 item
+    print(d)
 
     answer = 1
     for item, n in d.items():
