@@ -1,3 +1,7 @@
+'''
+접두어 문자 처럼 주어진 문자p와 같은길이만큼 s문자열을 slicing 해서 확인하는 문제
+s for문 정의할 때 range 조절 필요!
+'''
 import sys
 input = sys.stdin.readline
 

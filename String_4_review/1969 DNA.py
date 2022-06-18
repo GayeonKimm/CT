@@ -9,6 +9,12 @@ input =sys.stdin.readline
 
 n,m = map(int, input().split())
 chk = [[i for i in input().strip()] for _ in range(n)]
+# [['Z', 'X', 'C', 'V', 'B'],
+# ['Z', 'X', 'X', 'V', 'B'],
+# ['Z', 'C', 'C', 'V', 'B'],
+# ['Z', 'X', 'C', 'V', 'B'],
+# ['A', 'S', 'D', 'F', 'G']]
+print(chk)
 '''
 s = []
 for i in range(n):

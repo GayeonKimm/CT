@@ -44,7 +44,8 @@ for i in range(len(s)):
         if s[i-1] == '(': #
             answer += temp
         stack.pop()
-        temp = temp // 2
+        temp = temp // 2 # 다시 1로 만들어두기
+
     else:
         if not stack or stack[-1] != '[':
             answer = 0
@@ -52,7 +53,7 @@ for i in range(len(s)):
         if s[i-1] == '[': # 이게 무슨 차이여?
             answer += temp
         stack.pop()
-        temp = temp // 3
+        temp = temp // 3 # 다시 1로 만들어 두기
 
 if stack:  # break가 아니여도 남아있는게 있다면
     answer = 0

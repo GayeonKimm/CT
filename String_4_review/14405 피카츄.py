@@ -1,3 +1,7 @@
+'''
+피카추 문자열로만 구성된 s찾기
+문자열이 존재하면 *로 대체해 둔 다음 *말고 다른게 존재하면 NO 출력하기
+'''
 import sys
 input = sys.stdin.readline
 

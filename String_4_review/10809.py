@@ -4,9 +4,10 @@ input = sys.stdin.readline
 s = input().strip()
 alpha = 'abcdefghijklmnopqrstuvwxyz'
 answer = []
+
 for i in alpha:
     if i in s:
-        answer.append(s.find(i))
+        answer.append(s.find(i)) # find - 등장하는 가장 처음 위치 반환함
     else:
         answer.append(-1)
 

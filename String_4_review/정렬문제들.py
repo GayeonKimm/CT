@@ -1,9 +1,12 @@
 '''
 맨 앞자리 수로 정렬을 수행해야할 때
+-> 숫자를 문자로 표현하여 비교하기
+- 혹시라도 0인 예외 상황 고려하여 문자로 출력결과 내보내기
 '''
 
 def solution(numbers):
     numbers.sort(key= lambda x:str(x)*333, reverse=True)
+
     if numbers[0] == 0:
         return '0'
     else:

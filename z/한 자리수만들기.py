@@ -1,17 +1,17 @@
+# 1769 3의 배수 문제 참고
+
 def solution(n, cnt, answer):
-    if len(str(n)) > 1:
+    while len(str(n)) > 1 :
         cnt += 1
-        t = 0
+        hap = 0
         for i in str(n):
-            t += int(i)
-        answer.append(t)
-        solution(t, cnt, answer)
+            hap += int(i)
+        n = str(hap)
+        answer.append(n)
 
     else:
         return cnt, answer
 
-
-## 왜 cnt가 반영이 안되는거지?????????
 
 n = 753257
 cnt = 0

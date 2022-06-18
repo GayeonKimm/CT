@@ -3,6 +3,7 @@ input = sys.stdin.readline
 
 # 방법 1
 from collections import Counter
+
 answer = []
 while True:
     n = input().strip()

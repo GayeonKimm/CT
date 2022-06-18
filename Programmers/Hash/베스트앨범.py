@@ -1,4 +1,7 @@
 '''
+- 정렬과 딕셔너리 문제 끝판왕인 느낌이여요... !
+
+
 1. 전체의 정보를 담을 d1 만들고, 뭐가 제일 많이 들어있는지에 대한 d2를 만들어둠
 2. d2 많은 순으로 정렬
 3. d2 돌면서 d1 정렬
@@ -8,6 +11,7 @@ def solution(genres, plays):
     answer = []
     d1, d2 = {}, {}
 
+    # 이런 중복의 방법이 있었어 ..
     for idx, (g,p) in enumerate(zip(genres, plays)):
         # d1 담기
         if g not in d1:
