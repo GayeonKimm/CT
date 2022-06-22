@@ -33,7 +33,6 @@ while True:
         d_names.append(name)
     else:
         d[name] += 1
-
 d_names.sort()
 for i in d_names:
     print(f'{i} {((d[i]/cnt)*100):.4f}') # 이거 이렇게 해야 맞음
