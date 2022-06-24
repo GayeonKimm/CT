@@ -1,22 +1,33 @@
 '''
 문자열 열면 닫아야 해
 - 괄호 방향을 바꾸는 방법밖에 없음
-}가 들어오면 {로 바꾸자
 항상 길이가 짝수다???
+도대체 어떻게 푸는 거임?
+이 규칙 찾는거 결코 쉬운거 아니라고 생각함
 '''
 
 import sys
 input = sys.stdin.readline
 
-n = 0
+answer = []
 while True:
-    n += 1
     s = input().strip()
-    answer = 0
+    cnt = 0
+    stack = []
     if '-' in s:
         break
 
     for i in range(len(s)):
+        if not stack and s[i] == '}':
+            cnt += 1
+            stack.append('{')
+        elif stack and s[i] == '}':
+            stack.pop()
+        else:
+            stack.append(s[i])
+    cnt += len(stack) // 2 # 이거
+    answer.append(cnt)
 
-    print(n,'.', answer)
+for i in range(len(answer)):
+    print(i+1,'. ', answer[i], sep='')
 
