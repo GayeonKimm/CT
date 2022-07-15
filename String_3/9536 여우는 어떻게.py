@@ -5,6 +5,8 @@ replace가 있고 - > 안됨
 나처럼 들어온거 확인해도 되는 방법있고,
 sound를 돌면서 temp에 포함되지 않는 것들만 프린트하기
 이때 temp에는 울음소리 저장 (set으로 설정해서 중복 안ㄷ되게)
+
+여기사 remove, replace, add, 등등 정리하기~~
 '''
 import sys
 input = sys.stdin.readline
