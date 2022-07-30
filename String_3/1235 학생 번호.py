@@ -16,7 +16,6 @@ num = len(numbers[0])
 
 chk = False
 k = 1
-
 # 글자수와 k가 같아질 때까지
 while k < num:
     temp = set()
@@ -32,3 +31,4 @@ if chk:
     print(k)
 else:
     print(num)
+
